@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://www.springframework.org/schema/context 
+           http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+    <bean id="personService" class = "com.dream.test.vs.imple.PersonServiceImpl"/>
+    <bean id="sleepHelper" class="com.dream.test.aop.bean.SleepHelper"/>
+    <bean id="human" class = "com.dream.test.aop.bean.Human"/>
+
+	<bean id="sleepPointcut" class="org.springframework.aop.support.JdkRegexpMethodPointcut">
+		<property name="pattern" value=".*sleep" />
+	</bean>
+
+	<bean id="sleepHelperAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="sleepHelper" />
+		<property name="pointcut" ref="sleepPointcut" />
+	</bean>
+
+
+	<bean id="humanProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="human" />
+		<property name="interceptorNames" value="sleepHelperAdvisor" />
+		<property name="proxyInterfaces" value="com.dream.test.aop.bean.Sleepable" />
+	</bean>
+ </beans>

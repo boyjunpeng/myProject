@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/dream/common/intercept/CacheInterceptor.java=UTF-8
+encoding//src/main/java/com/dream/common/intercept/RopContextIntercept.java=UTF-8
+encoding//src/main/java/com/dream/common/spring/SpringBeanProxy.java=UTF-8
+encoding//src/main/java/com/dream/common/spring/SpringContextHolder.java=UTF-8
+encoding//src/main/java/com/dream/common/utils/memcached/ClientMemCacheConstants.java=UTF-8
+encoding//src/main/java/com/dream/common/utils/memcached/MemcachedUtil.java=UTF-8
+encoding//src/main/java/com/dream/common/utils/rop/RopRequest.java=UTF-8
+encoding//src/main/java/com/dream/common/utils/rop/RopServiceHandler.java=UTF-8
+encoding//src/main/java/com/dream/common/web/Router.java=UTF-8
